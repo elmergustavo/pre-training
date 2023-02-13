@@ -9,4 +9,8 @@
   </label>
   <input type="" id="text" placeholder="Email del Usuario"
     class="bg-black"/>
+
+    <div className="bg-orange-400">
+      hola 
+    </div>
 </div>
