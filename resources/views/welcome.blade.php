@@ -22,13 +22,8 @@
 
         @livewireStyles
     </head>
-    <body class="antialiased">
-
-        <div class="bg-slate-900">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident distinctio hic laboriosam sint blanditiis dolorem repellendus id explicabo quasi debitis voluptatibus nobis amet, impedit nihil in doloremque. Praesentium, eum soluta.
-        </div>
+    <body class="antialiased bg-slate-800">
         <livewire:send-gmail />
-
         @livewireScripts
     </body>
 </html>

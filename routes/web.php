@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\RedisController;
 use Illuminate\Support\Facades\Route;
+use App\Jobs\sendEmail;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,9 +16,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    //envio en segundo plano para determinar los cambios 
+   // sendEmail::dispatch();
+    sendEmail::dispatchAfterResponse(); // 
+    return response("\nfin");
 });
 
 Route::get('/main', function () {
     return view('main');
 });
+
+Route::get('/redis', [RedisController::class, 'index']);

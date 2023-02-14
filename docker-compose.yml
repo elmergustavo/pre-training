@@ -66,6 +66,33 @@ services:
                 - ping
             retries: 3
             timeout: 5s
+    # mailhog:
+    #     image: mailhog/mailhog
+    #     environment:
+    #         MH_STORAGE: maildir
+    #         MH_MAILDIR_PATH: /home/mailhog
+    #         VIRTUAL_HOST: mail.wordpress.localtest.me
+    #         VIRTUAL_PORT: 8025
+    #     networks:
+    #         - default
+    #         - nginx-proxy
+    #     volumes:
+    #         - mailhog:/home/mailhog
+
+    
+    
+     # SMTP Server
+    smtp:
+        platform: linux/x86_64
+        image: mailhog/mailhog
+        container_name: docker-workspace-smtp
+        logging:
+            driver: 'none'
+        ports:
+            - "8003:1025"
+            - "8100:8025"
+        networks:
+            - docker_workspace_network
     meilisearch:
         image: 'getmeili/meilisearch:latest'
         ports:
@@ -99,9 +126,12 @@ services:
         networks:
             - sail
 networks:
+    docker_workspace_network:
+        driver: bridge
     sail:
         driver: bridge
 volumes:
+    # mailhog:
     sail-mysql:
         driver: local
     sail-redis:

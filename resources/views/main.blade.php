@@ -23,11 +23,9 @@
 
         @livewireStyles
     </head>
-    <body class="antialiased">
+    <body class="antialiased m-4 ">
 
-        <nav>
-            <a href="/">Principal</a>
-        </nav>
+   
         <livewire:send-gmail />
 
         @livewireScripts
