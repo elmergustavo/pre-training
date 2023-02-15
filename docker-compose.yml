@@ -89,7 +89,7 @@ services:
         logging:
             driver: 'none'
         ports:
-            - "8003:1025"
+            - "8004:1025"
             - "8100:8025"
         networks:
             - docker_workspace_network
